@@ -4,20 +4,23 @@ import axios from "axios";
 import Link from "next/link";
 import Sidebar from "../components/sideBar";
 
-const UserList = () => {
+export async function getStaticProps() {
+  const response = await fetch(process.env.MONGO_URI);
+  const dataUser = await response.json();
+  return {
+    props: {
+      dataUser,
+    },
+  };
+}
+
+const UserList = ({ dataUser }) => {
   const [users, setUser] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    getUser();
+    setUser(dataUser);
   }, []);
-
-  const getUser = async () => {
-    setLoading(true);
-    const response = await axios.get(process.env.MONGO_URI);
-    setUser(response.data);
-    setLoading(false);
-  };
 
   const deleteUser = async (id) => {
     try {
