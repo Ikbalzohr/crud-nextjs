@@ -7,12 +7,14 @@ import Sidebar from "../components/sideBar";
 export async function getStaticProps() {
   const response = await fetch(process.env.MONGO_URI);
   const dataUser = await response.json();
+
   return {
     props: {
       dataUser,
     },
   };
 }
+console.log(dataUser);
 
 const UserList = ({ dataUser }) => {
   const [users, setUser] = useState([]);
