@@ -5,7 +5,7 @@ import UserList from "./userlist";
 const Home = () => {
   return (
     <>
-      <UserList />
+      <Sidebar />
     </>
   );
 };

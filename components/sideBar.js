@@ -4,7 +4,9 @@ import Link from "next/link";
 export default function Sidebar() {
   return (
     <div className="fixed flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
-      <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">CRUD Next JS</h2>
+      <Link href={"/"}>
+        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white hover:cursor-pointer">CRUD Next JS</h2>
+      </Link>
 
       <div className="relative mt-6">
         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
