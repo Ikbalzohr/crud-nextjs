@@ -15,7 +15,6 @@ const UserList = () => {
   const getUser = async () => {
     setLoading(true);
     const response = await axios.get(process.env.MONGO_URI);
-    console.log(response);
     setUser(response.data);
     setLoading(false);
   };
