@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    MONGO_URI: "https://backend-nodejs-lilac.vercel.app/users",
+    MONGO_URI: "https://frontend-nextjs-v2.herokuapp.com/",
   },
 };
 
